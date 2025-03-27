@@ -4,7 +4,7 @@ get_badges <- function() {
     httr2::req_method('GET') |>
     httr2::req_headers(`Content-Type` = 'application/json') |>
     httr2::req_auth_basic(username = Sys.getenv("Credly_API_Key"), password = '') |>
-    httr::req_perform()
+    httr2::req_perform()
 
   df <- badges |>
     httr2::resp_body_string() |>
