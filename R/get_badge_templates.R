@@ -1,0 +1,17 @@
+get_badge_templates <- function() {
+
+  badges <- httr2::request(paste0('https://api.credly.com/v1/','organizations/',Sys.getenv("Credly_ORG_ID"),'/badge_templates')) |>
+    httr2::req_method('GET') |>
+    httr2::req_headers(`Content-Type` = 'application/json') |>
+    httr2::req_auth_basic(username = Sys.getenv("Credly_API_Key"), password = '') |>
+    httr2::req_perform()
+
+  df <- badges |>
+    httr2::resp_body_string() |>
+    jsonlite::fromJSON(flatten = TRUE,simplifyDataFrame = TRUE)
+
+  badge_templates <- df$data
+
+  return(badge_templates)
+
+}
