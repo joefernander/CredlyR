@@ -1,0 +1,12 @@
+Package: CredlyR
+Type: Package
+Title: An interface for interacting with the Credly API
+Version: 0.0.0.1
+Author: Joe Fernander
+Maintainer: Joe Fernander <josephf@ecampus.usg.edu>
+Description: This package interacts with the Credly API
+License: MIT
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/joefernander/CredlyR
+BugReports: https://github.com/joefernander/CredlyR/issues
